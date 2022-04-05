@@ -1,0 +1,10 @@
+<h2 align="center ">Change font size</h2>
+
+<div>
+  <label>Enter font size (px):</label>
+  <input #element type="range" min="9" max="70" value="18" (change)="changeFontSize(element.value)">
+</div>
+
+<p class="output" [style.font-size.px]="fontsize">
+  c====3
+</p>

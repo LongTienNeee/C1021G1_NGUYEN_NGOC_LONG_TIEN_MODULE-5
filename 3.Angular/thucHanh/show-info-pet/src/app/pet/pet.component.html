@@ -1,0 +1,16 @@
+<h2 align="center">Pet profile</h2>
+    <table align="center">
+      <tr>
+        <td>Pet name :</td>
+        <td><input #element type="text" (change)="changeNamePet(element.value)"></td>
+      </tr>
+      <tr>
+        <td>Pet image :</td>
+        <td><input #element type="text" [(ngModel)]="pet.image"></td>
+      </tr>
+    </table>
+<br>
+<h3 align="center">Pet name : {{pet.name}}</h3>
+<div align="center">
+  <img [src]='pet.image' alt="Pet đang ngủ" style="max-width: 100%" align="center">
+</div>
