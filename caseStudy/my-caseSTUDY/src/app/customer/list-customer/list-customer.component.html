@@ -1,0 +1,29 @@
+<table align="center"  class="table table-success table-striped">
+<tr>
+    <th>Mã khách hàng</th>
+    <th>Tên khách hàng</th>
+    <th>Ngày sinh</th>
+    <th>Giới tính</th>
+    <th>CMND</th>
+    <th>Email</th>
+    <th>SĐT</th>
+    <th>Địa chỉ</th>
+    <th></th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+        <td>{{customer.customerCode}}</td>
+        <td>{{customer.customerName}}</td>
+        <td>{{customer.customerBirthday}}</td>
+        <td>{{customer.customerGender}}</td>
+        <td>{{customer.customerIDCart}}</td>
+        <td>{{customer.customerEmail}}</td>
+        <td>{{customer.customerPhone}}</td>
+        <td>{{customer.customerAddress}}</td>
+        <td>
+          <button class="mb-1 btn btn-primary">Sửa</button>
+          <button class="mb-1 btn btn-danger">Xóa</button>
+        </td>
+    </tr>
+  </tbody>
+</table>

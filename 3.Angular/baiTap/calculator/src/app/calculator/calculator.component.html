@@ -1,14 +1,13 @@
-
-  <input type="number" [(ngModel)]="number1">
-  <button (click)="calculate(element.value)" #element value="+">+</button>
+<div>
+<input #element type="number" (change)="changeNumber1(element.value)">
+</div>
+  <button (click)="calculate(elementoperate.value)" #elementoperate value="+">+</button>
   <button (click)="calculate('-')" >-</button>
   <button (click)="calculate('*')" >*</button>
   <button (click)="calculate('/')" >/</button>
-
-  <input type="number" [(ngModel)]="number2">
+<div>
+  <input #element2 type="number" (change)="changeNumber2(element2.value)">
+</div>
   =
-  <label >{{totalCal}}</label>
+  <label>{{totalCal}}</label>
 
-<script>
-
-</script>

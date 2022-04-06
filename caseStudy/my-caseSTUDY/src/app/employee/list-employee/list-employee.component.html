@@ -1,0 +1,33 @@
+<table align="center" class="table table-success table-striped">
+<tr>
+    <th>Mã nhân viên</th>
+    <th>Tên nhân viên</th>
+    <th>Ngày sinh</th>
+    <th>Giới tính</th>
+    <th>CMND</th>
+    <th>Lương $</th>
+    <th>Địa chỉ</th>
+    <th>Vị trí</th>
+    <th>Trình độ học vấn</th>
+    <th>Bộ phận</th>
+    <th></th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let employee of employees">
+    <td>{{employee.employeeCode}}</td>
+    <td>{{employee.employeeName}}</td>
+    <td>{{employee.employeeBirthday}}</td>
+    <td>{{employee.employeeGender}}</td>
+    <td>{{employee.employeeIdCart}}</td>
+    <td>{{employee.employeeSalary}}</td>
+    <td>{{employee.employeeAddress}}</td>
+    <td>{{employee.employeePosition}}</td>
+    <td>{{employee.employeeEducationDegree}}</td>
+    <td>{{employee.employeeDivision}}</td>
+    <td>
+      <button class="m-1 btn btn-primary">Sửa</button>
+      <button class="m-1 btn btn-danger">Xóa</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

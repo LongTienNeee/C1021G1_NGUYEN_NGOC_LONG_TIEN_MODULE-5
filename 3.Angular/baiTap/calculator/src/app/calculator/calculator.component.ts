@@ -10,7 +10,6 @@ export class CalculatorComponent implements OnInit {
   number1: number;
   number2: number;
   totalCal: number;
-  operator: string;
 
   constructor() {
   }
@@ -35,11 +34,13 @@ export class CalculatorComponent implements OnInit {
       default :
         this.totalCal = 0;
     }
-
-
+  }
+  changeNumber1(number1: string) {
+    this.number1 = parseInt(number1);
+  }
+  changeNumber2(number2: string){
+    this.number2 = parseInt(number2);
   }
 
-  changeOperator(operator) {
-    this.operator = operator;
-  }
+
 }
