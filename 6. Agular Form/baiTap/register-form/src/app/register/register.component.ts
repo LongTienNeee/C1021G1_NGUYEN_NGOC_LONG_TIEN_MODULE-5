@@ -25,11 +25,6 @@ export class RegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if(this.password.localeCompare(this.confirmPassword)){
-      this.check = true;
-    } else {
-      this.check = false
-    }
   }
 
   onSubmit() {
@@ -39,7 +34,7 @@ export class RegisterComponent implements OnInit {
   inputPassword(password:string){
     this.password = password;
   }
-  inputConfirmPassword(password:string){
+  inputConfirmPassword( password:string){
     this.confirmPassword = password;
   }
 }

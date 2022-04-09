@@ -1,0 +1,14 @@
+<h2 class="text-center">
+  Danh sách công việc hôm nay
+</h2>
+<div class="col-md-8 offset-md-2">
+  Nhập công việc hôm nay
+  <input type="text" class="form-control" [formControl]="content" (change)="change()" placeholder="VD: Học Bài">
+  <ul>
+    <li (click)="toggleTodo(i)"
+        [class.complete]="todo.complete"
+        *ngFor="let todo of todos; index as i">
+      {{todo.content}}
+    </li>
+  </ul>
+</div>

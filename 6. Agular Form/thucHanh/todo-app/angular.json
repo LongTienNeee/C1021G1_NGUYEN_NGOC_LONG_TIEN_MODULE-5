@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "login-form": {
+    "todo-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/login-form",
+            "outputPath": "dist/todo-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "login-form:build"
+            "browserTarget": "todo-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "login-form:build:production"
+              "browserTarget": "todo-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "login-form:build"
+            "browserTarget": "todo-app:build"
           }
         },
         "test": {
@@ -110,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "login-form:serve"
+            "devServerTarget": "todo-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "login-form:serve:production"
+              "devServerTarget": "todo-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "login-form",
+  "defaultProject": "todo-app",
   "cli": {
-    "analytics": "b7c45438-ae2e-41e8-b47b-539b6d552229"
+    "analytics": "b0a33dc9-3a79-4696-95e6-bc56aa01ae94"
   }
 }

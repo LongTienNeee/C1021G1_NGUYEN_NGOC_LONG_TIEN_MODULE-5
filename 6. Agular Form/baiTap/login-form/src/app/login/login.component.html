@@ -1,0 +1,52 @@
+<section class="vh-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-black">
+
+        <div class="px-5 ms-xl-4">
+          <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
+          <img src="https://codegym.vn/wp-content/uploads/2021/08/CodeGym-Logo.webp" width="290" height="50" alt="CodeGym" id="logo" data-height-percentage="70" data-actual-width="1263.33" data-actual-height="217.812">
+        </div>
+
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+          <form style="width: 23rem" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; font-size: xxx-large">Đăng Nhập</h3>
+
+            <div class="form-outline mb-4">
+              <label class="form-label" for="email">Địa chỉ Email</label>
+              <input type="email" name="email" id="email" class="form-control form-control-lg"   formControlName="email"/>
+              <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email')?.invalid && loginForm.controls.email.touched">
+                Vui lòng không để trống email || Sai định dạng email
+              </div>
+
+            </div>
+
+            <div class="form-outline mb-4">
+              <label class="form-label" for="password" >Mật Khẩu</label>
+              <input type="password" name="password" id="password" class="form-control form-control-lg" formControlName="password"/>
+              <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('password')?.invalid && loginForm.controls.password.touched">
+                Vui lòng không để trống mật khẩu || Mật khẩu phải chứa 6 kí tự trở lên
+              </div>
+            </div>
+
+            <div class="pt-1 mb-4">
+              <button style="background-color: #272882; color: #709085"  [disabled]="loginForm.invalid" class="btn btn-info btn-lg btn-block" type="submit">Đăng Nhập</button>
+            </div>
+
+            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Quên Mật khẩu?</a></p>
+            <p>Bạn chưa có tài khoản? <a href="#!" class="link-info">Đăng kí Tài khoản</a></p>
+
+          </form>
+
+        </div>
+
+      </div>
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+             alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+      </div>
+    </div>
+  </div>
+</section>
