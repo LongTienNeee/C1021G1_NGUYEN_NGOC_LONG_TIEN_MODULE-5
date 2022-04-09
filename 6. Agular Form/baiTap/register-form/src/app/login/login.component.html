@@ -1,0 +1,114 @@
+<section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Đăng kí tài khoản</h2>
+
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="name">Họ Tên</label>
+                  <input type="text" id="name" class="form-control form-control-lg" name="name" formControlName="name"/>
+                  <div class=" alert alert-danger" role="alert" *ngIf="registerForm.get('name')?.invalid && registerForm.controls.name.touched">
+                    Nhập Họ Tên
+                  </div>
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="age">Tuổi</label>
+                  <input type="email" id="age" class="form-control form-control-lg" name="age" formControlName="age"/>
+                  <div class=" alert alert-danger" role="alert" *ngIf="registerForm.controls.age.touched  &&  registerForm.get('age')?.invalid">
+                    Bạn chưa đủ 18 Tuổi
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <div class="form-label" for="gender">Giới tính</div>
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="nam" formControlName="gender">
+                  <label class="form-check-label" for="male">
+                    Nam
+                  </label>
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="nữ" formControlName="gender">
+                  <label class="form-check-label" for="female">
+                    Nữ
+                  </label>
+                  <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('gender')?.invalid && registerForm.controls.gender.enabled">
+                    Hãy chọn giới tính
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label">Quê Quán</label>
+                  <select class="form-select"  formControlName="country">
+                    <option selected>--Chọn Thành Phố--</option>
+                    <option value="Hà Nội" >Hà Nội</option>
+                    <option value="Đà Nẵng">Đà Nẵng</option>
+                    <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                  </select>
+                  <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('country')?.invalid && registerForm.controls.country.touched">
+                    Hãy chọn thành phố
+                  </div>
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="phone">Số điện thoại</label>
+                  <input type="text" id="phone" class="form-control form-control-lg" name="phone" formControlName="phone"/>
+                  <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('phone')?.invalid && registerForm.controls.phone.touched">
+                    Vui lòng nhập số điện thoại
+                  </div>
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="email">Email</label>
+                  <input type="text" id="email" class="form-control form-control-lg" name="email" formControlName="email"/>
+                  <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('email')?.invalid && registerForm.controls.email.touched">
+                    Vui lòng nhập Email
+                  </div>
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="password">Password</label>
+                  <input #password (change)="inputPassword(password.value)" type="text"  id="password" class="form-control form-control-lg" name="password" formControlName="password"/>
+                  <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('password')?.invalid && registerForm.controls.password.touched">
+                    Vui lòng nhập mật khẩu
+                  </div>
+                  <label class="form-label" for="form3Example5cdg">Xác nhận lại Password</label>
+                  <input #confirmPassword (change)="inputConfirmPassword(confirmPassword.value)" type="text" id="form3Example5cdg" class="form-control form-control-lg" formControlName="confirmPassword"/>
+                  <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.controls.confirmPassword.touched">
+                    Mật khẩu không trùng khớp
+                  </div>
+                </div>
+
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="check"
+                  />
+                  <label class="form-check-label" for="check">
+                   Tôi đồng ý tất cả <a href="#!" class="text-body"><u>Điều Khoản</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button  [disabled] ="registerForm.invalid" type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng kí</button>
+                </div>
+                <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản? <a href="#!" class="fw-bold text-body"><u>Đăng nhập</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
