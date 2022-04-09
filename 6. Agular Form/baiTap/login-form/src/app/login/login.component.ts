@@ -21,4 +21,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.loginForm.value)
   }
+
+  goToAnotherPage() {
+    window.location.href= "https://codegym.vn/";
+  }
 }
