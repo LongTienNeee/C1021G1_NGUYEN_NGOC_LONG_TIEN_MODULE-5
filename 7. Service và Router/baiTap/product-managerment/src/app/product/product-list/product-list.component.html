@@ -1,10 +1,10 @@
-<h1>Danh sách sản phẩm</h1>
-<table>
+<h1 align="center">Danh sách sản phẩm</h1>
+<table align="center">
   <tr>
     <th>STT</th>
     <th>Tên</th>
     <th>Giá</th>
-    <th>Mô tả</th>
+    <th>Mô tả về sản phẩm</th>
     <th></th>
   </tr>
   <tr *ngFor="let product of products; index as i">
@@ -13,7 +13,7 @@
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
     <td>
-      <button><a routerLink="/product/update">Sửa</a></button>
+      <button><a routerLink="/product/update" style="text-decoration: none">Sửa</a></button>
     </td>
   </tr>
 </table>

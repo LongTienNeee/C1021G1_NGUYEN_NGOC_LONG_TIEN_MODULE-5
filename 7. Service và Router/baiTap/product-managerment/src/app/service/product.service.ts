@@ -39,6 +39,14 @@ export class ProductService {
     this.products.push(product);
   }
 
+  findById(id:number){
+    for(let element of this.products){
+      if(id === element.id){
+        return element;
+      }
+    }
+  }
+
   updateById(id: number, name: string, price:number, description:string ){
     for(let element of this.products) {
       if(id === element.id){

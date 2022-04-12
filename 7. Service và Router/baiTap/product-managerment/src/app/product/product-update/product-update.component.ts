@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../../service/product.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-product-update',
@@ -9,26 +10,40 @@ import {Router} from '@angular/router';
   styleUrls: ['./product-update.component.css']
 })
 export class ProductUpdateComponent implements OnInit {
-  updateProductForm: FormGroup = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl(),
-    price: new FormControl(),
-    description: new FormControl()
+  id:number;
 
-  })
+  updateProductForm: FormGroup ;
+
+
 
   constructor(
     private product: ProductService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      this.id = +paramMap.get('id');
+      const product = this.getProduct(this.id);
+      this.updateProductForm = new FormGroup({
+        id: new FormControl(product.id),
+        name: new FormControl(product.name),
+        price: new FormControl(product.price),
+        description: new FormControl(product.description),
+      });
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  submit() {
+  updateProduct() {
     const productList = this.updateProductForm.value;
     this.product.updateById(productList.id, productList.name, productList.price, productList.description)
     this.updateProductForm.reset();
     this.router.navigateByUrl("")
+  }
+
+  private getProduct(id: number) {
+    return this.product.findById(id);
   }
 }
