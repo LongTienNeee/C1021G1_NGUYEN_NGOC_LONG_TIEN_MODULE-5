@@ -1,0 +1,15 @@
+<table class="table table-success table-striped" align="center">
+  <tbody>
+  <tr>
+    <th style="text-align: center">Từ điển động vật</th>
+  </tr>
+  <div >
+    <tr *ngFor="let dictionary of dictionaryService.listWord">
+          <td><button  (click)="translate(dictionary.word)">{{dictionary.word}}</button></td>
+    </tr>
+  </div>
+  </tbody>
+</table>
+<div>
+  {{mean}}
+</div>

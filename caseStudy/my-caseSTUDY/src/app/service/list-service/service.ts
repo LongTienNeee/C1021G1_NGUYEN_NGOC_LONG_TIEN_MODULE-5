@@ -6,4 +6,5 @@ export interface Service {
   serviceCost?: number;
   serviceMaxPeople?: number;
   serviceFloor?: number;
+  serviceImage?: string;
 }

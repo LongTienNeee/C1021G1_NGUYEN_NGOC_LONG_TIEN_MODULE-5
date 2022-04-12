@@ -1,1 +1,15 @@
-<p>list-service works!</p>
+<div class="container" >
+  <div class="row">
+    <div class="col-4" *ngFor="let service of services">
+      <div class="card" style="width: 18rem;">
+        <img src="{{service.serviceImage}}" class="card-img-top" alt="Hình ảnh chưa thân thiện">
+        <div class="card-body">
+          <h4 class="card-title">{{service.serviceName}}</h4>
+          <p class="card-text">Diên Tích Phòng: {{service.serviceArea}} m2</p>
+          <button>Đặt phòng</button>
+          <label></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
