@@ -10,6 +10,7 @@ import { ListCustomerComponent } from './customer/list-customer/list-customer.co
 import { HomeComponent } from './home/home.component';
 import { ListEmployeeComponent } from './employee/list-employee/list-employee.component';
 import { ListServiceComponent } from './service/list-service/list-service.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ListServiceComponent } from './service/list-service/list-service.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

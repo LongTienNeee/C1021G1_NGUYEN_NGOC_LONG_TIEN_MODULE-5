@@ -1,15 +1,13 @@
 <h2 class="text-center">
-  Danh sách công việc hôm nay
+  Công việc ngày hôm nay
 </h2>
 <div class="col-md-8 offset-md-2">
-  Nhập công việc hôm nay
-  <input type="text" class="form-control" [formControl]="content" (change)="addNew()" placeholder="VD: Học Bài">
+  Nhập công việc:  <input type="text" class="form-control" [formControl]="content" (change)="create()" placeholder="VD: Đi học">
   <ul>
     <li (click)="toggleTodo(i)"
         [class.complete]="todo.complete"
         *ngFor="let todo of todos; index as i">
-      {{todo?.content}}
-      <button (click)="deleteATodo(todo.id)">Xóa</button>
+      {{todo.content}}
     </li>
   </ul>
 </div>

@@ -8,19 +8,21 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class TodoService {
-  API_URL : "http://localhost:3000/todo"
-  constructor(private http: HttpClient) { }
+  API_URL: "http://localhost:3000/todo"
 
-  getAll():Observable<Todo[]>{
-    console.log('797878y8hg');
+  constructor(private http: HttpClient) {
+  }
+
+  getAll(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.API_URL);
   }
 
-  delete(id:number) : void{
-    this.http.delete<Todo>(this.API_URL);
+
+  create(todo: Todo){
+    return this.http.post<Todo>(this.API_URL, todo);
   }
 
-  addNew(data: Todo): void{
-    this.http.post<Todo>(this.API_URL, data);
+  delete(id: number){
+    return this.http.delete<Todo>(this.API_URL + '/' + id);
   }
 }
