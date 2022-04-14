@@ -31,14 +31,13 @@ export class TodoComponent implements OnInit {
   }
 
   create() {
-    const value = this.content.value;
+    const value = this.content.value.toLowerCase();
     if (value) {
       const todo: Todo = {
         id: _id++,
         content: value,
         complete: false
       };
-      this.todos.push(todo);
       this.todoService.create(todo).subscribe();
       this.content.reset();
     }
